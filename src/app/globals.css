@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .bg-double {
+    background-image: url("/shade-green.png"), url("/shade-blue.png");
+    background-position: left, right;
+    background-size: 20%, 20%;
+    background-repeat: no-repeat, no-repeat;
+  }
+  .bg-blogexcellence {
+    background-image: url("/BlogShade.png"), url("/bgexcellence.png");
+    background-position:
+      top center,
+      bottom right;
+    background-size: contain, contain;
+    background-repeat: no-repeat, no-repeat;
+  }
+  .bg-blogAI {
+    background-image: url("/Shadegrowth.png"), url("/bgAI.png");
+    background-position:
+      top right,
+      top left;
+    background-size: contain, contain;
+    background-repeat: no-repeat, no-repeat;
+  }
+  .bg-bloggrowth {
+    background-image: url("/ShadeAI.png"), url("/bggrowth.png");
+    background-position:
+      top center,
+      bottom right;
+    background-size: contain, 70%;
+    background-repeat: no-repeat, no-repeat;
+  }
+  .flip-card {
+    perspective: 1000px;
+  }
+
+  .flip-card-inner {
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    backface-visibility: hidden;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+}
