@@ -1,7 +1,22 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import "../globals.css";
 
+const CONTACT_EMAIL = "contact@saynt.ai";
+
 const Home: React.FC = () => {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [sent, setSent] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(`New message from ${email}`);
+    const body = encodeURIComponent(message);
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    setSent(true);
+  };
+
   return (
     <div className="bg-gradient-to-b from-[#23453f] from-8% via-[#020617] via-20% to-[#020617] to-100% overflow-clip relative z-40 mblres:w-[100%] mblres:justify-center mblres:px-3">
       <div className="flex flex-col items-center">
@@ -45,15 +60,15 @@ const Home: React.FC = () => {
         <h2 className="text-[#E5F5D8] text-[80px] font-bold mblres:text-2xl">
           What makes our AI, AI.
         </h2>
-        <div className="flex justify-between items-center w-[80%] ml-12 bg-[url('/shade.png')] bg-contain bg-no-repeat my-0 mblres:flex-col mblres:mt-4 mblres:justify-center">
+        <div className="flex justify-between items-center w-[80%] ml-12 bg-[url('/shade.png')] bg-contain bg-no-repeat my-0 mblres:flex-col mblres:ml-0 mblres:w-[100%] mblres:mt-4 mblres:justify-center">
           <div>
             <h2 className="text-[#3DC3DA] text-[48px] font-body font-bold mblres:text-4xl">
               Innovation
             </h2>
             <p className="text-[#E5F5D8] text-[36px] font-thin font-body tracking-[1px] text-pretty leading-[45px] w-[80%] mblres:text-xl mblres:w-[100%] md:w-full md:text-sm">
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiuxsod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam”
+              “We build AI that adapts to how you already work and live,
+              rather than asking you to adapt to it. Every model we craft
+              starts with a real problem, not a proof of concept.”
             </p>
           </div>
           <img
@@ -64,7 +79,7 @@ const Home: React.FC = () => {
         </div>
       </section>
       <section className="bg-[url('/shade2.png')] bg-left bg-no-repeat py-14">
-        <div className="flex justify-between items-center w-[100%] px-[120px] gap-[200px] mblres:w-[100%] mblres:flex-col-reverse mblres:h-[100%] mblres:gap-3">
+        <div className="flex justify-between items-center w-[100%] px-[120px] gap-[200px] mblres:w-[100%] mblres:px-5 mblres:flex-col-reverse mblres:h-[100%] mblres:gap-3">
           <img
             src="/Shield.png"
             alt="Shield"
@@ -75,9 +90,9 @@ const Home: React.FC = () => {
               Accuracy
             </h2>
             <p className="text-[#E5F5D8] text-[36px] font-thin font-body tracking-[1px] text-pretty leading-[45px] w-[80%] mblres:text-sm mblres:w-[100%] md:w-full md:text-sm mblres:mt-4">
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiuxsod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam”
+              “Every output is checked against real-world data before it
+              reaches you, so the answers you get are ones you can actually
+              trust and act on.”
             </p>
           </div>
         </div>
@@ -89,7 +104,8 @@ const Home: React.FC = () => {
               “Unlock tomorrow with AI today.
             </h2>
             <p className="text-[26px] font-thin font-body text-white tracking-[1px] text-pretty leading-[32px] mblres:w-[100%] mblres:text-sm">
-              Thank you for being part of our journey, Here at SAYNT, we're
+              Thank you for being part of our journey, Here at SAYNT,
+              we&apos;re
               revolutionizing the future with cutting-edge AI technology. Our
               innovative solutions are designed to empower businesses, enhance
               experiences, and drive unparalleled growth. Together, let’s shape
@@ -127,9 +143,9 @@ const Home: React.FC = () => {
               Contact Us
             </h2>
             <p className="text-md mt-2 md:mb-6 text-white font-thin w-[50%] mblres:w-[100%]">
-              Reach us out, let's build the future together.
+              Reach us out, let&apos;s build the future together.
             </p>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="mb-4">
                 <label
                   htmlFor="email"
@@ -140,6 +156,9 @@ const Home: React.FC = () => {
                 <input
                   type="email"
                   id="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="w-full p-3 bg-transparent border border-gray-500 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#3DC3DA]"
                   placeholder="Email"
                 />
@@ -154,6 +173,9 @@ const Home: React.FC = () => {
                 <textarea
                   id="message"
                   rows={5}
+                  required
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                   className="w-full p-3 bg-transparent border border-gray-500 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#3DC3DA]"
                   placeholder="Message"
                 ></textarea>
@@ -164,6 +186,11 @@ const Home: React.FC = () => {
               >
                 Submit
               </button>
+              {sent && (
+                <p className="mt-4 text-[#7EEBB6] font-medium">
+                  Opening your email client to send this message...
+                </p>
+              )}
             </form>
           </div>
         </div>

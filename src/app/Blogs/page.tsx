@@ -3,8 +3,14 @@ import "../globals.css";
 import Link from "next/link";
 import Article from "../Components/Article";
 import { CiSearch } from "react-icons/ci";
+import type { Metadata } from "next";
 
-// Define the component
+export const metadata: Metadata = {
+  title: "Blog",
+  description:
+    "Read, study, and unite — insights from Saynt AI on AI, sustainability, growth, and engineering.",
+};
+
 const Blog: React.FC = () => {
   return (
     <div className="bg-[#020617] overflow-clip relative z-40">
@@ -41,7 +47,7 @@ const Blog: React.FC = () => {
             </p>
           </div>
           <div className="bg-bloggrowth bg-cover w-full p-5 pb-2 h-[500px] min-w-[300px] mblres:h-[400px] flex flex-col justify-between shadow-four-sides rounded-[30px] mblres:rounded-3xl">
-            <h2 className="text-white text-[43.96px] font-bold font-body w-[200px]">
+            <h2 className="text-white text-[43.96px] font-bold font-body w-[200px] mblres:text-[200%]">
               Nurturing Growth
             </h2>
             <p className="text-right underline decoration-white decoration-2 text-white text-[32px] font-semibold font-body">
@@ -80,33 +86,53 @@ const Blog: React.FC = () => {
             All
           </div>
           <div className="text-white text-[24px] font-bold font-body border-t border-[3px] border-[#7EEBB6] rounded-xl p-2 w-full">
-            All
+            AI
           </div>
           <div className="text-white text-[24px] font-bold font-body border-t border-[3px] border-[#7EEBB6] rounded-xl p-2 w-full">
-            All
+            Sustainability
           </div>
           <div className="text-white text-[24px] font-bold font-body border-t border-[3px] border-[#7EEBB6] rounded-xl p-2 w-full">
-            All
+            Growth
           </div>
           <div className="text-white text-[24px] font-bold font-body border-t border-[3px] border-[#7EEBB6] rounded-xl p-2 w-full mblres:hidden block">
-            All
+            Engineering
           </div>
           <div className="text-white text-[24px] font-bold font-body border-t border-[3px] border-[#7EEBB6] rounded-xl p-2 w-full mblres:hidden block">
-            All
+            Product
           </div>
           <div className="text-white text-[24px] font-bold font-body border-t border-[3px] border-[#7EEBB6] rounded-xl p-2 w-full mblres:hidden block">
-            All
+            Company
           </div>
           <div className="text-white text-[24px] font-bold font-body border-t border-[3px] border-[#7EEBB6] rounded-xl p-2 w-full mblres:hidden block">
-            All
+            Tutorials
           </div>
         </div>
       </section>
       <section className="grid grid-cols-2 place-items-center gap-16 mx-[10%] mblres:mx-5 mb-20 mblres:grid-cols-1">
-        <Article img="/article1.png" />
-        <Article img="/article2.png" />
-        <Article img="/article1.png" />
-        <Article img="/article2.png" />
+        <Article
+          img="/article1.png"
+          title="AI Driven Sustainability"
+          subtitle="Engineering"
+          description="Why we treat efficiency as a design constraint, not an afterthought."
+        />
+        <Article
+          img="/article2.png"
+          title="Nurturing Growth"
+          subtitle="Company"
+          description="How our team scales without losing sight of what got us here."
+        />
+        <Article
+          img="/article1.png"
+          title="Engineering Excellence"
+          subtitle="Engineering"
+          description="The standards we hold our models and our codebase to."
+        />
+        <Article
+          img="/article2.png"
+          title="Any Subject, Any Level"
+          subtitle="Product"
+          description="Inside ConnectEd's approach to turning textbooks into study guides."
+        />
       </section>
       <div>
         <img src="/Footer.png" alt="Footer" className="w-full" />

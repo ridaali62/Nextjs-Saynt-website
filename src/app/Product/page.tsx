@@ -1,5 +1,12 @@
 import React from "react";
 import "../globals.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "ConnectEd — Our Product",
+  description:
+    "ConnectEd turns your textbooks into interactive study guides with AI-generated summaries, flashcards, and progress tracking.",
+};
 
 const Product: React.FC = () => {
   return (
@@ -79,7 +86,7 @@ const Product: React.FC = () => {
               Any Subject, Any Level
             </h3>
             <p className="text-white text-[25px] text-balance  font-thin font-body tracking-[1px] text-start  mblres:w-[100%]  mblres:text-center">
-              Whether you're tackling complex calculus or mastering medieval
+              Whether you&apos;re tackling complex calculus or mastering medieval
               history, Lumina supports textbooks across various subjects and
               levels.
             </p>
@@ -99,11 +106,11 @@ const Product: React.FC = () => {
         <img
           src="/FlashCards.png"
           alt="Study"
-          className="h-[700px] w-[800px] mblres:w-[100%] md:w-[60%] md:h-[50%]"
+          className="h-[700px] w-[800px] mblres:w-[100%] mblres:h-auto md:w-[60%] md:h-[50%]"
         />
       </section>
       <section className="flex items-center justify-between mx-[100px]  flex-row  mblres:w-[100%] mblres:flex-col mblres:mx-0 md:mx-[10%] ">
-        <img src="/Tests.png" alt="Test" className="h-[550px] w-[700px] md:w-[60%] md:h-[50%]" />
+        <img src="/Tests.png" alt="Test" className="h-[550px] w-[700px] mblres:w-[100%] mblres:h-auto md:w-[60%] md:h-[50%]" />
         <div className="flex flex-col items-start  w-[40%] pb-[100px] mblres:w-[100%] md:w-[100%]">
           <h3 className="pb-5 font-medium font-body text-[40px] text-balance text-transparent bg-clip-text bg-gradient-to-r from-[#3DC3DA] to-[#7EEBB6] leading-[43px] text-start mblres:w-[100%] mblres:text-center">
             Randomized Tests
@@ -124,7 +131,7 @@ const Product: React.FC = () => {
             integrated notes feature.{" "}
           </p>
         </div>
-        <img src="/Notes.png" alt="Notes" className="h-[600px] w-[800px] mblres:w-[100%] md:w-[60%] md:h-[50%]" />
+        <img src="/Notes.png" alt="Notes" className="h-[600px] w-[800px] mblres:w-[100%] mblres:h-auto md:w-[60%] md:h-[50%]" />
       </section>
       <section>
         <div className="w-fit flex flex-col m-auto ">

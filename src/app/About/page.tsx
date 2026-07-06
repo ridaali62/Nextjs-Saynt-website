@@ -1,11 +1,13 @@
 "use client";
 import React from "react";
+import dynamic from "next/dynamic";
 import FlipCard from "../Components/FlipCard";
 import craftingAiAnimation from "../lotties/craftingai-animation.json";
-import Lottie from "react-lottie";
 import newAnimation from "../lotties/new-animation.json";
 import { motion } from "framer-motion";
 import Lamp from "../Components/Lamp";
+
+const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
 
 const About: React.FC = () => {
   const heroLottieConfig = {
@@ -28,8 +30,8 @@ const About: React.FC = () => {
 
   return (
     <div className="bg-[#020617] overflow-clip relative z-40">
-      <div className="h-96 w-40 bg-[#3DC3DA] rounded-full blur-[150px] absolute right-0"></div>
-      <div className="h-96 w-40 bg-[#7EEAB6] rounded-full blur-[150px] absolute left-0 top-96"></div>
+      <div className="h-96 w-40 bg-[#3DC3DA] rounded-full blur-[150px] absolute right-0 mblres:h-52 mblres:w-24 md:h-64 md:w-28"></div>
+      <div className="h-96 w-40 bg-[#7EEAB6] rounded-full blur-[150px] absolute left-0 top-96 mblres:h-52 mblres:w-24 md:h-64 md:w-28"></div>
       
       <section className="flex flex-col items-center justify-center pt-[10%] mblres:pt-[100px] text-white">
         <motion.h1
@@ -58,7 +60,7 @@ const About: React.FC = () => {
         <div className="flex flex-col items-center justify-center w-full">
           <div className="flex flex-row items-center justify-around w-full mt-24 mblres:flex-col">
             <div className="text-white flex flex-col items-start mblres:items-center justify-center gap-12 relative">
-              <div className="bg-[#6CC8BE] h-24 w-36 rounded-full -top-4 absolute -rotate-45 -left-[100px] blur-[50px] z-0" />
+              <div className="bg-[#6CC8BE] h-24 w-36 rounded-full -top-4 absolute -rotate-45 -left-[100px] blur-[50px] z-0 mblres:-left-10 mblres:w-24" />
               <h1 className="text-[#3DC3DA] text-6xl font-bold z-20 mblres:text-4xl mblres:text-center">
                 Crafting AI
               </h1>
@@ -144,7 +146,7 @@ const About: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          "At Saynt, our mission is to revolutionize daily life through the seamless integration of state-of-the-art AI technologies, empowering individuals to thrive in their personal and professional endeavors. Our AI-driven solutions are designed to cater to the day-to-day needs of users, offering innovative tools and insights to enhance productivity, foster personal growth, and navigate daily life with confidence."
+          &ldquo;At Saynt, our mission is to revolutionize daily life through the seamless integration of state-of-the-art AI technologies, empowering individuals to thrive in their personal and professional endeavors. Our AI-driven solutions are designed to cater to the day-to-day needs of users, offering innovative tools and insights to enhance productivity, foster personal growth, and navigate daily life with confidence.&rdquo;
         </motion.p>
       </div>
 

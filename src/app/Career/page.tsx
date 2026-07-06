@@ -1,5 +1,12 @@
 import React from "react";
 import "../globals.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Careers",
+  description:
+    "Join Saynt AI and help build the AI products that shape how people learn and work.",
+};
 
 const Career: React.FC = () => {
   return (
@@ -24,7 +31,7 @@ const Career: React.FC = () => {
         <h3 className=" text-[40px] font-body font-medium text-transparent bg-clip-text bg-gradient-to-l from-[#3DC3DA] to-[#7EEBB6] leading-[50px]  text-start mblres:text-xl mblres:w-[100%] mblres:text-center">
           progressive employment..
         </h3>
-        <div className="flex flex-col ml-[200px] items-end">
+        <div className="flex flex-col ml-[200px] items-end mblres:ml-0">
           <img src="/arrow.png" alt="Arrow" className="block mblres:hidden" />
         </div>
         <div className="text-[30px] bg-gradient-to-l from-[#3DC3DA] to-[#7EEBB6] py-2 px-3  text-white font-medium rounded-xl w-fit mt-0  mblres:mt-2 mblres:text-2xl">
@@ -86,13 +93,22 @@ const Career: React.FC = () => {
         <p className="bg-gradient-to-r from-[#020617] from-10% via-[#478567] to-[#7EEBB6] h-[4px] mblres:h-0"></p>
       </div>
 
-      <ul className="bg-[#484848] rounded-t-3xl text-white text-[24px] font-medium gap-10 font-body flex flex-row mx-auto py-2 px-3 my-20 mblres:items-center items-start mblres:w-[60%] mblres:flex-col mblres:gap-5  w-fit">
-        <li>Post Name</li>
-        <li>Post Details</li>
-        <li>Post Requirements</li>
-        <li>Last Date</li>
-        <li>Apply Here</li>
-      </ul>
+      <div className="bg-[#484848] rounded-3xl text-white font-body flex flex-col items-center gap-3 mx-auto py-14 px-10 my-20 max-w-[600px] text-center mblres:w-[80%] mblres:px-5">
+        <p className="text-[28px] font-bold mblres:text-2xl">
+          No open positions right now
+        </p>
+        <p className="text-[18px] font-light text-white/80">
+          We&apos;re not actively hiring at the moment, but we&apos;re always
+          happy to hear from great people. Send us your resume and
+          we&apos;ll reach out when a role opens up that fits.
+        </p>
+        <a
+          href="mailto:careers@saynt.ai"
+          className="mt-4 text-[20px] bg-gradient-to-l from-[#3DC3DA] to-[#7EEBB6] py-2 px-5 text-white font-medium rounded-xl w-fit"
+        >
+          Email Us Your Resume
+        </a>
+      </div>
     </section>
     <div>
       <img src="/Footer.png" alt="Footer" className="w-full" />

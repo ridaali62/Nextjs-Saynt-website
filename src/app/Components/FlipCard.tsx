@@ -9,10 +9,10 @@ interface FlipcardProps {
 
 const FlipCard: React.FC<FlipcardProps> = ({ title, backTitle, description }) => {
   return (
-    <div className="flip-card h-[400px] w-[300px] ">
+    <div className="flip-card h-[400px] w-[300px] mblres:h-[320px] mblres:w-[240px]">
       <div className="flip-card-inner h-full">
         <div className="flip-card-front bg-gradient-to-b from-[#6CC8BE] shadow-[#3DC3DA] shadow-lg border to-[#3DC3DA]  text-white flex flex-col items-center justify-center p-6 rounded-lg h-full ">
-          <p className="text-white font-body font-bold text-9xl">{title}</p>
+          <p className="text-white font-body font-bold text-9xl mblres:text-7xl">{title}</p>
         </div>
         <div className="flip-card-back bg-[#3DC3DA]  font-body text-white px-6 rounded-lg flex flex-col items-center justify-end h-full ">
           <h2 className="text-white font-bold text-3xl text-balance text-center">

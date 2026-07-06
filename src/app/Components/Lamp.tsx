@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Lamp: React.FC = () => {
   return (
-    <div className="relative flex justify-center items-center mx-auto mt-[250px] mb-[20px] z-0">
+    <div className="relative flex justify-center items-center mx-auto mt-[250px] mb-[20px] z-0 md:mt-[120px]">
       <motion.div
         initial={{ width: "250px" }}
         animate={{ width: "400px" }}
