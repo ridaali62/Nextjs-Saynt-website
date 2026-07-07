@@ -36,9 +36,9 @@ const Navbar: React.FC = () => {
         </div>
         <div
           ref={menuRef}
-          className={`${active ? "" : "mblres:hidden md:hidden"}`}
+          className={`${active ? "" : "mblres:hidden"}`}
         >
-          <ul className="flex flex-row mt-3 text-[#E5F5D8] text-[20px] font-bold gap-10 mblres:gap-3 mblres:text-[25px] mblres:font-thin mblres:text-white mblres:flex-col mblres:absolute mblres:right-0 mblres:bg-[#1B3639] mblres:p-10 mblres:top-12 mblres:text-start mblres:h-lvh mblres:w-[50%] mblres:rounded-tl-xl md:gap-3 md:text-[25px] md:font-thin md:text-white md:flex-col md:absolute md:right-0 md:bg-[#1B3639] md:p-10 md:top-12 md:text-start md:h-lvh md:w-[50%] md:rounded-tl-xl">
+          <ul className="flex flex-row mt-3 text-[#E5F5D8] text-[20px] font-bold gap-10 mblres:gap-3 mblres:text-[25px] mblres:font-thin mblres:text-white mblres:flex-col mblres:absolute mblres:right-0 mblres:bg-[#1B3639] mblres:p-10 mblres:top-12 mblres:text-start mblres:h-lvh mblres:w-[50%] mblres:rounded-tl-xl">
             <li>
               <Link href="/Home">Home</Link>
             </li>
@@ -57,14 +57,14 @@ const Navbar: React.FC = () => {
           </ul>
         </div>
         <Link href="/Home#contact">
-          <div className="bg-gradient-to-r from-[#3DC3DA] to-[#7EEBB6] p-5 text-[15px] text-white font-bold rounded-lg mblres:p-1 mblres:text-[10px] mblres:hidden md:p-1 md:text-[10px] md:hidden">
+          <div className="bg-gradient-to-r from-[#3DC3DA] to-[#7EEBB6] p-5 text-[15px] text-white font-bold rounded-lg mblres:p-1 mblres:text-[10px] mblres:hidden md:p-1 md:text-[10px]">
             Contact Us
           </div>
         </Link>
         <button
           ref={menuButtonRef}
           onClick={handleClick}
-          className="text-white mblres:block md:block hidden text-3xl"
+          className="text-white mblres:block hidden text-3xl"
         >
           <CiMenuFries />
         </button>
