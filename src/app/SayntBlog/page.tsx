@@ -20,7 +20,7 @@ const SayntBlog: React.FC = () => {
       </div>
       <section className="flex justify-between mx-[10%]  mblres:mx-0 bg-gradient-to-bl from-[#204b4d]  via-[#124c5b]  to-[#133452]  rounded-[30px] pt-5 pl-5 mt-32 h-[400px] mblres:h-[180px] mblres:justify-start relative z-42">
         <p className="text-[61px] text-gray-400 font-body font-medium mblres:text-3xl">
-          Article Banner
+          Engineering
         </p>
       </section>
       <section className="mx-[280px] mblres:mx-6 md:mx-[10%] my-16 text-pretty">
@@ -28,7 +28,7 @@ const SayntBlog: React.FC = () => {
           AI Driven Sustainability
         </h1>
         <div className="flex place-items-center gap-3">
-          <img src="logo.png" alt="Log" />
+          <img src="logo.png" alt="Logo" />
           <div>
             <p className="text-[32px] text-gray-400 font-body font-bold leading-[32px] mblres:text-xl mblres:leading-normal">
               Team Saynt AI

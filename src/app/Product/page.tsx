@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import "../globals.css";
 import type { Metadata } from "next";
 
@@ -142,9 +143,9 @@ const Product: React.FC = () => {
         </div>
 
         <div className="flex gap-6 mt-16 justify-center mb-20 flex-row  mblres:items-center items-stretch mblres:flex-col ">
-          <div className="bg-gradient-to-b from-[#144450] via-[#1f585d] to-[#144450] rounded-xl p-3 w-full max-w-[350px] flex flex-col items-center">
+          <div className="bg-gradient-to-b from-[#144450] via-[#1f585d] to-[#144450] rounded-xl p-3 w-full max-w-[350px] flex flex-col items-center justify-end">
             <img src="/LiveProgress.png" alt="LiveProgress" className="p-3" />
-            <h4 className=" pb-5 pt-2 text-[28px] font-body font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#3DC3DA] to-[#7EEBB6] md:text-center">
+            <h4 className=" pb-5 text-[25px] font-body font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#3DC3DA] to-[#7EEBB6] md:text-center">
               Live Progress Tracking
             </h4>
             <p className="text-white font-body text-[16px] text-center pb-5 text-pretty w-[80%]">
@@ -190,9 +191,12 @@ const Product: React.FC = () => {
             <h3 className="text-[40px] font-body font-medium text-transparent bg-clip-text bg-gradient-to-r from-[#3DC3DA] to-[#7EEBB6] mblres:text-3xl ">
               Get started with ConnectEd
             </h3>
-            <div className="text-[30px] bg-gradient-to-r from-[#3DC3DA] to-[#7EEBB6] p-2  text-white font-medium rounded-xl w-fit mblres:mt-4">
+            <Link
+              href="/Home#contact"
+              className="text-[30px] bg-gradient-to-r from-[#3DC3DA] to-[#7EEBB6] p-2  text-white font-medium rounded-xl w-fit mblres:mt-4 hover:from-[#7EEBB6] hover:to-[#3DC3DA]"
+            >
               Contact Us
-            </div>
+            </Link>
           </div>
           <picture>
             <source srcSet="/ConnectEd2.png" media="(max-width: 767px)" />

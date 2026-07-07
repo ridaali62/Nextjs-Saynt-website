@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
           </ul>
         </div>
         <Link href="/Home#contact">
-          <div className="bg-gradient-to-r from-[#3DC3DA] to-[#7EEBB6] p-5 text-[15px] text-white font-bold rounded-lg mblres:p-1 mblres:text-[10px] mblres:hidden md:p-1 md:text-[10px]">
+          <div className="bg-gradient-to-r from-[#3DC3DA] to-[#7EEBB6] p-5 text-[15px] text-white font-bold rounded-lg mblres:p-1 mblres:text-[10px] mblres:hidden md:p-1 md:text-[10px] hover:from-[#7EEBB6] hover:to-[#3DC3DA]">
             Contact Us
           </div>
         </Link>

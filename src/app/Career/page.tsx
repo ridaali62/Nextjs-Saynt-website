@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import "../globals.css";
 import type { Metadata } from "next";
 
@@ -34,9 +35,12 @@ const Career: React.FC = () => {
         <div className="flex flex-col ml-[200px] items-end mblres:ml-0">
           <img src="/arrow.png" alt="Arrow" className="block mblres:hidden" />
         </div>
-        <div className="text-[30px] bg-gradient-to-l from-[#3DC3DA] to-[#7EEBB6] py-2 px-3  text-white font-medium rounded-xl w-fit mt-0  mblres:mt-2 mblres:text-2xl">
+        <Link
+          href="#openings"
+          className="text-[30px] bg-gradient-to-l from-[#3DC3DA] to-[#7EEBB6] py-2 px-3  text-white font-medium rounded-xl w-fit mt-0  mblres:mt-2 mblres:text-2xl hover:from-[#7EEBB6] hover:to-[#3DC3DA]"
+        >
           Get Started
-        </div>
+        </Link>
       </div>
       <img src="/Career.png" alt="ConnectEd" className="mt-10 md:w-[50%]" />
     </section>
@@ -85,7 +89,7 @@ const Career: React.FC = () => {
         </div>
       </div>
     </section>
-    <section className="mblres:w-[100%] mblres:flex-col">
+    <section id="openings" className="mblres:w-[100%] mblres:flex-col">
       <div className="w-fit flex flex-col m-auto">
         <h2 className=" text-white text-[48px] font-body font-bold mblres:text-[40px]">
           Job Openings
@@ -104,7 +108,7 @@ const Career: React.FC = () => {
         </p>
         <a
           href="mailto:careers@saynt.ai"
-          className="mt-4 text-[20px] bg-gradient-to-l from-[#3DC3DA] to-[#7EEBB6] py-2 px-5 text-white font-medium rounded-xl w-fit"
+          className="mt-4 text-[20px] bg-gradient-to-l from-[#3DC3DA] to-[#7EEBB6] py-2 px-5 text-white font-medium rounded-xl w-fit hover:from-[#7EEBB6] hover:to-[#3DC3DA]"
         >
           Email Us Your Resume
         </a>

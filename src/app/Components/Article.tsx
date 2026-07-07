@@ -21,7 +21,7 @@ const Article: React.FC<ArticleProps> = ({ img, title, subtitle, description }) 
         <p className="text-white text-[24px] font-body font-medium">{description}</p>
         <Link
           href="/SayntBlog"
-          className="underline decoration-white decoration-1 text-white text-[24px] font-body font-medium text-right block"
+          className="underline decoration-white decoration-1 text-white text-[24px] font-body font-medium text-right block hover:text-[#7EEBB6] hover:decoration-[#7EEBB6]"
         >
           Read More
         </Link>

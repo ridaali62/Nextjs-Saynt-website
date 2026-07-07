@@ -1,17 +1,61 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import "../globals.css";
 import Link from "next/link";
 import Article from "../Components/Article";
 import { CiSearch } from "react-icons/ci";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Blog",
-  description:
-    "Read, study, and unite — insights from Saynt AI on AI, sustainability, growth, and engineering.",
-};
+const CATEGORIES = [
+  "All",
+  "AI",
+  "Sustainability",
+  "Growth",
+  "Engineering",
+  "Product",
+  "Company",
+  "Tutorials",
+];
+
+const ARTICLES = [
+  {
+    img: "/article1.png",
+    title: "AI Driven Sustainability",
+    subtitle: "Engineering",
+    description: "Why we treat efficiency as a design constraint, not an afterthought.",
+  },
+  {
+    img: "/article2.png",
+    title: "Nurturing Growth",
+    subtitle: "Company",
+    description: "How our team scales without losing sight of what got us here.",
+  },
+  {
+    img: "/article1.png",
+    title: "Engineering Excellence",
+    subtitle: "Engineering",
+    description: "The standards we hold our models and our codebase to.",
+  },
+  {
+    img: "/article2.png",
+    title: "Any Subject, Any Level",
+    subtitle: "Product",
+    description: "Inside ConnectEd's approach to turning textbooks into study guides.",
+  },
+];
 
 const Blog: React.FC = () => {
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [search, setSearch] = useState("");
+
+  const filteredArticles = ARTICLES.filter((article) => {
+    const matchesCategory =
+      activeCategory === "All" || article.subtitle === activeCategory;
+    const matchesSearch = article.title
+      .toLowerCase()
+      .includes(search.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+
   return (
     <div className="bg-[#020617] overflow-clip relative z-40">
       <div className="flex flex-col items-center w-full">
@@ -42,26 +86,35 @@ const Blog: React.FC = () => {
             <h2 className="text-white text-[43.96px] font-bold font-body w-[200px] mblres:text-[200%]">
               AI Driven Sustainability
             </h2>
-            <p className="text-right underline decoration-white decoration-2 text-white text-[32px] font-semibold font-body">
+            <Link
+              href="/SayntBlog"
+              className="text-right underline decoration-white decoration-2 text-white text-[32px] font-semibold font-body hover:text-[#7EEBB6] hover:decoration-[#7EEBB6]"
+            >
               Read More
-            </p>
+            </Link>
           </div>
           <div className="bg-bloggrowth bg-cover w-full p-5 pb-2 h-[500px] min-w-[300px] mblres:h-[400px] flex flex-col justify-between shadow-four-sides rounded-[30px] mblres:rounded-3xl">
             <h2 className="text-white text-[43.96px] font-bold font-body w-[200px] mblres:text-[200%]">
               Nurturing Growth
             </h2>
-            <p className="text-right underline decoration-white decoration-2 text-white text-[32px] font-semibold font-body">
+            <Link
+              href="/SayntBlog"
+              className="text-right underline decoration-white decoration-2 text-white text-[32px] font-semibold font-body hover:text-[#7EEBB6] hover:decoration-[#7EEBB6]"
+            >
               Read More
-            </p>
+            </Link>
           </div>
         </div>
         <div className="bg-blogexcellence bg-no-repeat min-w-[300px] w-full p-5 pb-2 h-[500px] mblres:h-[400px] flex flex-col justify-between shadow-four-sides rounded-[30px] mblres:rounded-3xl mt-10 mblres:bg-cover bg-cover">
           <h2 className="text-white text-[43.96px] font-bold font-body w-[200px] mblres:text-[200%]">
             Engineering Excellence
           </h2>
-          <p className="text-right underline decoration-white decoration-2 text-white text-[32px] font-semibold font-body">
+          <Link
+            href="/SayntBlog"
+            className="text-right underline decoration-white decoration-2 text-white text-[32px] font-semibold font-body hover:text-[#7EEBB6] hover:decoration-[#7EEBB6]"
+          >
             Read More
-          </p>
+          </Link>
         </div>
       </section>
       <section className="mx-[10%] mblres:mx-10 mt-20 mb-14">
@@ -77,62 +130,51 @@ const Blog: React.FC = () => {
             type="text"
             name="search"
             id="search"
-            className="bg-transparent text-white text-[24px] font-body font-medium focus:outline-none"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="bg-transparent text-white text-[24px] font-body font-medium focus:outline-none w-full"
             placeholder="Search Here"
           />
         </div>
-        <div className="flex w-full gap-10 text-center mt-10 justify-center">
-          <div className="text-white text-[24px] font-bold font-body bg-[#7EEBB6] rounded-xl p-2 w-full">
-            All
-          </div>
-          <div className="text-white text-[24px] font-bold font-body border-t border-[3px] border-[#7EEBB6] rounded-xl p-2 w-full">
-            AI
-          </div>
-          <div className="text-white text-[24px] font-bold font-body border-t border-[3px] border-[#7EEBB6] rounded-xl p-2 w-full">
-            Sustainability
-          </div>
-          <div className="text-white text-[24px] font-bold font-body border-t border-[3px] border-[#7EEBB6] rounded-xl p-2 w-full">
-            Growth
-          </div>
-          <div className="text-white text-[24px] font-bold font-body border-t border-[3px] border-[#7EEBB6] rounded-xl p-2 w-full mblres:hidden block">
-            Engineering
-          </div>
-          <div className="text-white text-[24px] font-bold font-body border-t border-[3px] border-[#7EEBB6] rounded-xl p-2 w-full mblres:hidden block">
-            Product
-          </div>
-          <div className="text-white text-[24px] font-bold font-body border-t border-[3px] border-[#7EEBB6] rounded-xl p-2 w-full mblres:hidden block">
-            Company
-          </div>
-          <div className="text-white text-[24px] font-bold font-body border-t border-[3px] border-[#7EEBB6] rounded-xl p-2 w-full mblres:hidden block">
-            Tutorials
-          </div>
+        <div className="flex w-full gap-10 text-center mt-10 justify-center flex-wrap">
+          {CATEGORIES.map((category) => (
+            <button
+              key={category}
+              type="button"
+              onClick={() => setActiveCategory(category)}
+              className={`text-white text-[24px] font-bold font-body rounded-xl p-2 w-full transition-colors ${
+                activeCategory === category
+                  ? "bg-[#7EEBB6]"
+                  : "border-t border-[3px] border-[#7EEBB6] hover:bg-[#7EEBB6]/20"
+              } ${
+                ["Engineering", "Product", "Company", "Tutorials"].includes(
+                  category
+                )
+                  ? "mblres:hidden block"
+                  : ""
+              }`}
+            >
+              {category}
+            </button>
+          ))}
         </div>
       </section>
       <section className="grid grid-cols-2 place-items-center gap-16 mx-[10%] mblres:mx-5 mb-20 mblres:grid-cols-1">
-        <Article
-          img="/article1.png"
-          title="AI Driven Sustainability"
-          subtitle="Engineering"
-          description="Why we treat efficiency as a design constraint, not an afterthought."
-        />
-        <Article
-          img="/article2.png"
-          title="Nurturing Growth"
-          subtitle="Company"
-          description="How our team scales without losing sight of what got us here."
-        />
-        <Article
-          img="/article1.png"
-          title="Engineering Excellence"
-          subtitle="Engineering"
-          description="The standards we hold our models and our codebase to."
-        />
-        <Article
-          img="/article2.png"
-          title="Any Subject, Any Level"
-          subtitle="Product"
-          description="Inside ConnectEd's approach to turning textbooks into study guides."
-        />
+        {filteredArticles.length > 0 ? (
+          filteredArticles.map((article, index) => (
+            <Article
+              key={`${article.title}-${index}`}
+              img={article.img}
+              title={article.title}
+              subtitle={article.subtitle}
+              description={article.description}
+            />
+          ))
+        ) : (
+          <p className="text-white text-[24px] font-body col-span-2 mblres:col-span-1">
+            No articles match your search.
+          </p>
+        )}
       </section>
       <div>
         <img src="/Footer.png" alt="Footer" className="w-full" />
